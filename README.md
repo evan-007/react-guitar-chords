@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+Probably only works with react-16+
+
 `yarn add react-guitar-chords`
 
 ```javascript

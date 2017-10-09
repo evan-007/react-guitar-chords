@@ -15,8 +15,12 @@ const Fingering = ({ frets, fingering, numberFretsToRender, lowestFret }) => {
   if (!isOpenChord) {
     // add a fret label to the left of the chord diagram
     svgFingering.push(
-      <text key={'todo'} x={CONSTANTS.X_MAX + 10} y={CONSTANTS.Y_BASE} fill="black">
-      {lowestFret}
+      <text
+        key="open-chord-fret-label"
+        x={CONSTANTS.X_MAX + 10}
+        y={CONSTANTS.Y_BASE} fill="black"
+      >
+        {lowestFret}
       </text>
     );
   }
@@ -25,7 +29,13 @@ const Fingering = ({ frets, fingering, numberFretsToRender, lowestFret }) => {
     if (fret === 'x' || fret === 0) {
       const xValue = CONSTANTS.X_BASE + (offset * index) - 4; // -1 because of how text sits
       return svgFingering.push(
-        <text x={xValue} y={CONSTANTS.Y_BASE - 3 }>{fret}</text>
+        <text
+          key={`zero-fret-${index}`}
+          x={xValue}
+          y={CONSTANTS.Y_BASE - 3 }
+        >
+          {fret}
+        </text>
       );
     }
     const xValue = CONSTANTS.X_BASE + (offset * index);
@@ -36,13 +46,26 @@ const Fingering = ({ frets, fingering, numberFretsToRender, lowestFret }) => {
       yCoord = CONSTANTS.Y_BASE + (yOffset * (fret - lowestFret + 1)) - (yOffset / 2);
     }
     svgFingering.push(
-      <circle cx={xValue} cy={yCoord} r="8" fill="black"></circle>
+      <circle
+        cx={xValue}
+        cy={yCoord}
+        fill="black"
+        key={`fingering-${index}`}
+        r="8"
+      >
+      </circle>
     );
     if (fingering) {
       const finger = fingering[index];
       svgFingering.push(
-        <text x={xValue} y={yCoord + 5} fill="white" textAnchor="middle">
-        {finger}
+        <text
+          fill="white"
+          key={`fingering-text-${index}`}
+          textAnchor="middle"
+          x={xValue}
+          y={yCoord + 5}
+        >
+          {finger}
         </text>
       );
     }
