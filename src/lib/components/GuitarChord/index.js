@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class GuitarChord extends Component {
+  static propTypes = {
+    chordName: PropTypes.string,
+    frets: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    ),
+    fingering: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    )
+  }
   render() {
     const fretStyles = { stroke: 'rgb(0,0,0)', strokeWidth: 0.2 };
     const [E, A, D, G, B, e] = this.props.frets;
@@ -112,7 +122,7 @@ class GuitarChord extends Component {
           const finger = this.props.fingering[index];
           svgFingering.push(
             <text x={xValue} y={yCoord + 5} fill="white" textAnchor="middle">
-              {fret}
+              {finger}
             </text>
         );
 
