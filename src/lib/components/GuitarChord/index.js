@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CONSTANTS from './constants';
 import FretBoard from './FretBoard';
+import Strings from './Strings';
 
 class GuitarChord extends Component {
   static propTypes = {
@@ -37,21 +38,6 @@ class GuitarChord extends Component {
     const REAL_Y_MAX = CONSTANTS.REAL_Y_MAX;
     const X_BASE = CONSTANTS.X_BASE;
     const X_MAX = CONSTANTS.X_MAX;
-
-    const stringsToRender = () => {
-      const stringCount = this.props.frets.length - 1;
-      const strings = [];
-      const width = X_MAX - X_BASE;
-      const offset = width / (stringCount);
-      // use lodash.times instead
-      for (let i = 0; i <= stringCount; i++) {
-        const xValue = X_BASE + (offset * i);
-        strings.push(
-          <line key={i} x1={xValue} x2={xValue} y1={Y_BASE} y2={REAL_Y_MAX} style={lineStyles}></line>
-        )
-      }
-      return strings;
-    }
 
     const fingering = () => {
       const svgFingering = [];
@@ -100,11 +86,16 @@ class GuitarChord extends Component {
       return svgFingering;
     };
 
+    // why
+    const stringCount = this.props.frets.length - 1;
+    // FretBoard and Strings return arrays so can't be <Component />
+    // syntax until react 16
+
     return (
       <svg width="150" height="150" style={{border: "1px solid red"}}>
         <text x="5" y="15">{this.props.chordName}</text>
         {FretBoard({ numberFretsToRender, fretStyles })}
-        {stringsToRender()}
+        {Strings({ stringCount, lineStyles })}
         {fingering()}
       </svg>
     );
