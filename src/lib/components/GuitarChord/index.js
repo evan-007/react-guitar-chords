@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import CONSTANTS from './constants';
 
 class GuitarChord extends Component {
   static propTypes = {
@@ -11,37 +12,33 @@ class GuitarChord extends Component {
       PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     )
   }
+
   render() {
     const fretStyles = { stroke: 'rgb(0,0,0)', strokeWidth: 0.2 };
-    const [E, A, D, G, B, e] = this.props.frets;
 
     // don't care about muted strings
     const fretted = this.props.frets.filter((fret) => {
       return typeof(fret) === 'number';
     });
-    // TODO: don't rely on Math
     const highestFret = Math.max(...fretted);
     const lowestFret = Math.min(...fretted);
     const fretRange = highestFret - lowestFret;
     // always show at least 4 frets
     const numberFretsToRender = (fretRange > 4 ) ? fretRange : 4;
+    // these should probably be set in CONSTANTS
     const openStringCoord = [2, 12, 22, 32, 42, 51]; // x coord of open string
+    // can this be in stylesheet?
     const lineStyles = { stroke: "rgb(0,0,0)", strokeWidth: 0.5 };
 
-    // svg canvas is 160x150
-    // padding-top 40px for name and open strings
-    // padding-left/right 10px for lowest fret label
-    // chord is rendered starting 20x down, add 20px padding bottom
-    // remaining y = 90px for 4+ frets
-    const Y_BASE = 40; // first fretmarker starts at this y coord
-    const Y_MAX = 90; // no, this is not the max! only for frets?
-    const REAL_Y_MAX = 130; // sorry
-    const X_BASE = 20;
-    const X_MAX = 120;
+    // TODO fix these to just reference the CONSTANTS
+    const Y_BASE = CONSTANTS.Y_BASE;
+    const Y_MAX = CONSTANTS.Y_MAX;
+    const REAL_Y_MAX = CONSTANTS.REAL_Y_MAX;
+    const X_BASE = CONSTANTS.X_BASE;
+    const X_MAX = CONSTANTS.X_MAX;
 
     const stringsToRender = () => {
-      let stringCount = this.props.frets.length;
-      stringCount = stringCount - 1; // eww
+      const stringCount = this.props.frets.length - 1;
       const strings = [];
       const width = X_MAX - X_BASE;
       const offset = width / (stringCount);
