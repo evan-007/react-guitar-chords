@@ -39,7 +39,7 @@ class GuitarChord extends Component {
       for (let i = 0; i <= stringCount; i++) {
         const xValue = X_BASE + (offset * i);
         strings.push(
-          <line x1={xValue} x2={xValue} y1={Y_BASE} y2={REAL_Y_MAX} style={lineStyles}></line>
+          <line key={i} x1={xValue} x2={xValue} y1={Y_BASE} y2={REAL_Y_MAX} style={lineStyles}></line>
         )
       }
       return strings;
@@ -55,12 +55,19 @@ class GuitarChord extends Component {
       for (let i = 0; i <= numberFretsToDraw; i++) {
         if (i === 0) {
           fretboard.push(
-            <line x1={X_BASE} x2={X_MAX} y1={Y_BASE} y2={Y_BASE} style={fretStyles}></line>
+            <line
+              key={i}
+              x1={X_BASE}
+              x2={X_MAX}
+              y1={Y_BASE}
+              y2={Y_BASE}
+              style={fretStyles}
+             ></line>
           );
         } else {
           const yCoord = Y_BASE + (yOffset * (i-1));
           fretboard.push(
-            <line x1={X_BASE} x2={X_MAX} y1={yCoord} y2={yCoord} style={fretStyles}></line>
+            <line key={i} x1={X_BASE} x2={X_MAX} y1={yCoord} y2={yCoord} style={fretStyles}></line>
           );
         }
       }
@@ -78,7 +85,7 @@ class GuitarChord extends Component {
       if (!isOpenChord) {
         // add a fret label to the left of the chord diagram
         svgFingering.push(
-          <text x={X_MAX + 10} y={Y_BASE} fill="black">
+          <text key={'todo'} x={X_MAX + 10} y={Y_BASE} fill="black">
             {lowestFret}
           </text>
         );
