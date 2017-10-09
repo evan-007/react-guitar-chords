@@ -4,18 +4,18 @@
 [![Dependencies](https://img.shields.io/david/udiliaInc/create-react-library.svg)]()
 [![Dev Dependencies](https://img.shields.io/david/dev/udiliaInc/create-react-library.svg)]()
 
-based on Facebook's <a href="https://github.com/facebookincubator/create-react-app" target="_blank">Create react app</a>
+Based on Facebook's [Create react app]("https://github.com/facebookincubator/create-react-app")
 
 ## Converted to custom setup
 
-Moved all dependencies to dev dependencies because we don't need extra dependencies for our library after build, but we want all this features while developing one: 
+Moved all dependencies to dev dependencies because we don't need extra dependencies for our library after build, but we want all this features while developing one:
 
 * Compile SCSS to css
 * React, JSX, ES6, and Flow syntax support.
 * Language extras beyond ES6 like the object spread operator.
 * A dev server that lints for common errors.
 * Import CSS and image files directly from JavaScript.
-* Autoprefixed CSS, so you don’t need `-webkit` or other prefixes.
+* Autoprefixed CSS, so you don't need `-webkit` or other prefixes.
 * A `build` script to bundle JS, CSS, and images for production.
 
 ## Getting Started
@@ -39,7 +39,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Library files
 
-All library files are located inside `src/lib`  
+All library files are located inside `src/lib`
 
 ## Demo app
 

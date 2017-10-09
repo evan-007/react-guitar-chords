@@ -1,11 +1,9 @@
 import React from 'react';
-import Example from '../lib';
-import { SecondExample } from '../lib';
+import GuitarChord from '../lib';
 
 const App = () => (
   <div>
-    <Example />
-    <SecondExample />
+    <GuitarChord frets={['x', 3, 2, 0, 1, 0]} chordName='C major' />
   </div>
 );
 
