@@ -1,6 +1,11 @@
 $text-color: #4b5658;
 $github-color: #3079ab;
 
+.GuitarChord-fret {
+  stroke: 'rbg(0,0,0)';
+  stroke-width: 0.2;
+}
+
 .SecondExample {
   text-align: center;
   width: 100%;

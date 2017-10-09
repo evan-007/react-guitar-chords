@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Example from './Example';
+import GuitarChord from './';
 
 it('Example renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Example />, div);
+  ReactDOM.render(<GuitarChord frets={[ 1,2,3,4,5,6 ]} />, div);
 });
