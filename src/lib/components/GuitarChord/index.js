@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CONSTANTS from './constants';
+import FretBoard from './FretBoard';
 
 class GuitarChord extends Component {
   static propTypes = {
@@ -50,35 +51,6 @@ class GuitarChord extends Component {
         )
       }
       return strings;
-    }
-
-    const fretsToRender = () => {
-      // gross install lodash.times
-      const fretboard = [];
-      const yOffset = Y_MAX / numberFretsToRender;
-      const numberFretsToDraw = numberFretsToRender + 1 // remember the nut
- 
-      // add 1 for nut
-      for (let i = 0; i <= numberFretsToDraw; i++) {
-        if (i === 0) {
-          fretboard.push(
-            <line
-              key={i}
-              x1={X_BASE}
-              x2={X_MAX}
-              y1={Y_BASE}
-              y2={Y_BASE}
-              style={fretStyles}
-             ></line>
-          );
-        } else {
-          const yCoord = Y_BASE + (yOffset * (i-1));
-          fretboard.push(
-            <line key={i} x1={X_BASE} x2={X_MAX} y1={yCoord} y2={yCoord} style={fretStyles}></line>
-          );
-        }
-      }
-      return fretboard;
     }
 
     const fingering = () => {
@@ -131,7 +103,7 @@ class GuitarChord extends Component {
     return (
       <svg width="150" height="150" style={{border: "1px solid red"}}>
         <text x="5" y="15">{this.props.chordName}</text>
-        {fretsToRender()}
+        {FretBoard({ numberFretsToRender, fretStyles })}
         {stringsToRender()}
         {fingering()}
       </svg>
