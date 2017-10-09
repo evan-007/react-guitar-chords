@@ -1,4 +1,26 @@
-# React NPM library starter kit
+# Guitar chord SVGs in React
+
+## Getting Started
+
+`y add react-guitar-chords`
+
+```javascript
+import React from 'react';
+import GuitarChord from 'react-guitar-chords';
+
+const MyChord = () => {
+  return (
+    <GuitarChord
+      chordName='C major'
+      frets={['x', 3, 2, 0, 1, 0]}
+    />
+  );
+}
+
+export default MyChord;
+```
+
+## React NPM library starter kit
 
 [![Build Status](https://travis-ci.org/UdiliaInc/create-react-library.svg?branch=master)](https://travis-ci.org/UdiliaInc/create-react-library)
 [![Dependencies](https://img.shields.io/david/udiliaInc/create-react-library.svg)]()
