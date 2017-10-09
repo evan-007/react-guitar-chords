@@ -1,7 +1,7 @@
 {
-  "name": "create-react-library",
+  "name": "react-guitar-chords",
   "version": "1.0.0",
-  "description": "React NPM library starter kit based on Facebook's create react app",
+  "description": "A react component for SVG guitar chord charts",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
@@ -10,13 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/udiliaInc/create-react-library.git"
+    "url": "git+https://github.com/evan-007/react-guitar-chords.git"
   },
-  "author": "Dimitri Mikadze <dimitri@udilia.com>",
+  "author": "Evan Lloyd <evan.u.lloyd@gmail.com>",
   "bugs": {
-    "url": "https://github.com/udiliaInc/create-react-library/issues"
+    "url": "https://github.com/evan-007/react-guitar-chords/issues"
   },
-  "homepage": "https://github.com/udiliaInc/create-react-library#readme",
+  "homepage": "https://github.com/evan-007/react-guitar-chords#readme",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "7.1.2",
