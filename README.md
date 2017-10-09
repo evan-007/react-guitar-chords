@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-`y add react-guitar-chords`
+`yarn add react-guitar-chords`
 
 ```javascript
 import React from 'react';
