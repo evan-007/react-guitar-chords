@@ -43,7 +43,7 @@ const MusicButton = ({ frets, buttonClasses }) => {
   };
 
   return (
-    <button onClick={playMusic} className={buttonClasses}>hi</button>
+    <button onClick={playMusic} className={buttonClasses}>Play</button>
   )
 };
 
