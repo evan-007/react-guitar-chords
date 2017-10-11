@@ -2,7 +2,9 @@
 
 ## Getting Started
 
-Probably only works with react-16+
+Needs react-16+
+
+[Demo](http://ruddy-zebra.surge.sh/)
 
 `yarn add react-guitar-chords`
 
