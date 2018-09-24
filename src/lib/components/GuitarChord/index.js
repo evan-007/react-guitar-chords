@@ -41,8 +41,17 @@ class GuitarChord extends Component {
     // why
     const stringCount = this.props.frets.length - 1;
     // TODO make it easier to extend styles of base elem
-    const wrapperStyles = this.props.inline ? {display: 'inline-block'} : {};
+    const wrapperStyles = {
+      display: 'flex',
+      flexDirection: 'column',
+      maxWidth: 150,
+    };
 
+    const buttonStyles = {
+      alignSelf: 'center',
+      marginBottom: 10,
+      ...this.props.buttonStyles,
+    }
 
     return (
       <div style={wrapperStyles}>
@@ -66,6 +75,7 @@ class GuitarChord extends Component {
         { this.props.music &&
           <MusicButton
             buttonClasses={this.props.buttonClasses}
+            buttonStyles={buttonStyles}
             frets={this.props.frets}
           />
         }
