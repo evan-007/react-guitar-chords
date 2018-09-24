@@ -15,14 +15,14 @@ const MusicButton = ({ frets, buttonClasses, buttonStyles }) => {
       if (chord[index] === 'x') {
         return 'x'
       } else {
-        const startingNote = parseInt(notes.indexOf(stringName));
-        const noteAdjust = parseInt(chord[index]);
+        const startingNote = parseInt(notes.indexOf(stringName), 10);
+        const noteAdjust = parseInt(chord[index], 10);
         let chordtone = startingNote + noteAdjust;
         // hack to handle going up an octave
         // when chordtone is longer than array of notes
         if(chordtone >= 12) {
           octaves[index]++
-          chordtone = (parseInt(chordtone) - 12)
+          chordtone = (parseInt(chordtone, 10) - 12)
         }
         return notes[chordtone]
       }

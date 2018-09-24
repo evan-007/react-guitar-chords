@@ -1,7 +1,7 @@
 // https://github.com/keithwhor/audiosynth MIT license
 // copypastad because it's an old project and we want es modules
-
-// eslint-disable
+// disable eslint because vendor code
+/* eslint-disable */
 
 var Synth, AudioSynth, AudioSynthInstrument;
 !function(){
