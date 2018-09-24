@@ -1,7 +1,7 @@
 import React from 'react';
 import Synth from './AudioSynth';
 
-const MusicButton = ({ frets, buttonClasses }) => {
+const MusicButton = ({ frets, buttonClasses, buttonStyles }) => {
   const playMusic = () => {
     // refactor!
     const notes = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
@@ -33,7 +33,7 @@ const MusicButton = ({ frets, buttonClasses }) => {
     // can't skip over 'x' because then octaves get messed up, instead just don't increament i if a muted note.
     let i = 0;
     chordNotes.forEach((value, index) => {
-      if(value !== 'x') { 
+      if(value !== 'x') {
         i++;
         setTimeout(() => {
           acoustic.play(value, octaves[index], 2);
@@ -43,7 +43,7 @@ const MusicButton = ({ frets, buttonClasses }) => {
   };
 
   return (
-    <button onClick={playMusic} className={buttonClasses}>Play</button>
+    <button onClick={playMusic} className={buttonClasses} style={buttonStyles}>Play</button>
   )
 };
 
