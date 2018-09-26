@@ -1,5 +1,5 @@
 import React from 'react';
-import CONSTANTS from './constants';
+import CONSTANTS from '../constants';
 
 const Fingering = ({ frets, fingering, numberFretsToRender, lowestFret }) => {
   // this component draws the black circles representing fingered notes, if

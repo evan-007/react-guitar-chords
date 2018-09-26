@@ -1,5 +1,5 @@
 import React from 'react';
-import CONSTANTS from './constants';
+import CONSTANTS from '../constants';
 
 const Strings = ({ stringCount, lineStyles }) => {
   // the veritical lines on the SVG that represent strings
