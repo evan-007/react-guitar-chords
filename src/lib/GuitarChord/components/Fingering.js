@@ -7,8 +7,7 @@ const Fingering = ({ frets, fingering, fretCount, lowestFret }) => {
   // numbers in the circles that represent which finger to use
   const svgFingering = [];
   // TODO: this is duplicate code in other render functions
-  const width = CONSTANTS.X_MAX - CONSTANTS.X_BASE;
-  const offset = width / 5;
+  const offset =  CONSTANTS.X_WIDTH / 5;
   const isOpenChord = frets.includes(0);
   const yOffset = CONSTANTS.Y_MAX / fretCount;
 
