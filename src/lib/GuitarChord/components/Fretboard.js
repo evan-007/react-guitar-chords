@@ -1,10 +1,11 @@
 import React from 'react';
 import CONSTANTS from '../constants';
 
-const Fretboard = ({ numberFretsToRender, fretStyles }) => {
-  // this component draws the horizontal lines for the nut + frets
-  const yOffset = CONSTANTS.Y_MAX / numberFretsToRender;
-  const numberFretsToDraw = numberFretsToRender + 2 // remember the nut and the final fret
+// this component draws the horizontal lines for the nut + frets
+const Fretboard = ({ fretCount, fretStyles }) => {
+
+  const yOffset = CONSTANTS.Y_MAX / fretCount;
+  const numberFretsToDraw = fretCount + 2 // add the nut and the final fret
 
   return Array.from(new Array(numberFretsToDraw)).map((_elem, index) => {
     if (index === 0) {

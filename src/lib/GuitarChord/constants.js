@@ -10,11 +10,13 @@ const X_BASE = 20;
 const X_MAX = 120;
 const Y_BASE = 40; // first fretmarker starts at this y coord
 const Y_MAX = 90; // no, this is not the max! only for frets?
+const X_WIDTH = X_MAX - X_BASE;
 
 const CONSTANTS = {
   REAL_Y_MAX,
   X_BASE,
   X_MAX,
+  X_WIDTH,
   Y_BASE,
   Y_MAX,
 }

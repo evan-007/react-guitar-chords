@@ -1,8 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import GuitarChord from './';
+import * as Enzyme from 'enzyme';
 
-it('Example renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<GuitarChord frets={[ 1,2,3,4,5,6 ]} />, div);
+import GuitarChord from './';
+import Fretboard from './components/Fretboard';
+
+describe('GuitarChord', () => {
+  const getWrapper = (overrideProps, renderMethod = 'shallow') => {
+    const defaultProps = {
+      chordName: 'Whatever minor',
+      frets: [0, 0, 0, 0, 0, 0],
+    };
+    return Enzyme[renderMethod](<GuitarChord {...defaultProps} {...overrideProps} />);
+  };
+
+  it('always renders at least 4 frets', () => {
+    const frets = [0, 'x', 'x', 0, 0, 0];
+    const wrapper = getWrapper({ frets });
+
+    const fretboard = wrapper.find(Fretboard);
+    expect(fretboard.props().fretCount).toBe(4);
+  });
 });
