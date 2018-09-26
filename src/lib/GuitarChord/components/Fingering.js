@@ -1,7 +1,7 @@
 import React from 'react';
 import CONSTANTS from '../constants';
 
-const Fingering = ({ frets, fingering, numberFretsToRender, lowestFret }) => {
+const Fingering = ({ frets, fingering, fretCount, lowestFret }) => {
   // this component draws the black circles representing fingered notes, if
   // this.props.fingering is passed into the GuitarChord, it will also put the
   // numbers in the circles that represent which finger to use
@@ -10,7 +10,7 @@ const Fingering = ({ frets, fingering, numberFretsToRender, lowestFret }) => {
   const width = CONSTANTS.X_MAX - CONSTANTS.X_BASE;
   const offset = width / 5;
   const isOpenChord = frets.includes(0);
-  const yOffset = CONSTANTS.Y_MAX / numberFretsToRender;
+  const yOffset = CONSTANTS.Y_MAX / fretCount;
 
   if (!isOpenChord) {
     // add a fret label to the left of the chord diagram

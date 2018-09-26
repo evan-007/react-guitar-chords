@@ -6,9 +6,10 @@ const Strings = ({ stringCount, lineStyles }) => {
   // fretboard
   // stringCount is this.props.frets.length so add 1 to it here, fix this!
 
-  return Array.from(new Array(stringCount + 1)).map((_elem, index) => {
+  return Array.from(new Array(stringCount)).map((_elem, index) => {
     const width = CONSTANTS.X_MAX - CONSTANTS.X_BASE;
-    const offset = width / (stringCount);
+    // -1 because we draw 6 lines, but the first one does not have an offset
+    const offset = width / (stringCount - 1 );
     const xValue = CONSTANTS.X_BASE + (offset * index);
 
     return (

@@ -34,12 +34,11 @@ class GuitarChord extends Component {
     const highestFret = Math.max(...fretted);
     const fretRange = highestFret - lowestFret;
     // always show at least 4 frets
-    const numberFretsToRender = (fretRange > 4 ) ? fretRange : 4;
+    const fretCount = (fretRange > 4 ) ? fretRange : 4;
     // can this be in stylesheet?
     const lineStyles = { stroke: "rgb(0,0,0)", strokeWidth: 0.5 };
 
-    // why
-    const stringCount = this.props.frets.length - 1;
+    const stringCount = this.props.frets.length;
     // TODO make it easier to extend styles of base elem
     const wrapperStyles = {
       display: 'flex',
@@ -63,13 +62,13 @@ class GuitarChord extends Component {
           />
           <Fretboard
             fretStyles={fretStyles}
-            numberFretsToRender={numberFretsToRender}
+            fretCount={fretCount}
           />
           <Fingering
             fingering={this.props.fingering}
             frets={this.props.frets}
             lowestFret={lowestFret}
-            numberFretsToRender={numberFretsToRender}
+            fretCount={fretCount}
           />
         </svg>
         { this.props.music &&
