@@ -1,7 +1,7 @@
 import React from 'react';
-import CONSTANTS from './constants'
+import CONSTANTS from '../constants';
 
-const FretBoard = ({ numberFretsToRender, fretStyles }) => {
+const Fretboard = ({ numberFretsToRender, fretStyles }) => {
   // this component draws the horizontal lines for the nut + frets
   const yOffset = CONSTANTS.Y_MAX / numberFretsToRender;
   const numberFretsToDraw = numberFretsToRender + 2 // remember the nut and the final fret
@@ -36,4 +36,4 @@ const FretBoard = ({ numberFretsToRender, fretStyles }) => {
   });
 }
 
-export default FretBoard;
+export default Fretboard;

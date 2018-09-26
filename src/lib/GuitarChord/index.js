@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FretBoard from './FretBoard';
-import Strings from './Strings';
-import Fingering from './Fingering';
-import MusicButton from './MusicButton';
+import Fretboard from './components/Fretboard';
+import Strings from './components/Strings';
+import Fingering from './components/Fingering';
+import MusicButton from './components/MusicButton';
 
 class GuitarChord extends Component {
   static propTypes = {
@@ -61,7 +61,7 @@ class GuitarChord extends Component {
             lineStyles={lineStyles}
             stringCount={stringCount}
           />
-          <FretBoard
+          <Fretboard
             fretStyles={fretStyles}
             numberFretsToRender={numberFretsToRender}
           />

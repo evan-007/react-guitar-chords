@@ -1,5 +1,5 @@
 import React from 'react';
-import { playChord } from './services/audioService';
+import { playChord } from '../services/audioService';
 
 const MusicButton = ({ frets, buttonClasses, buttonStyles }) => {
   const handleOnClick = () => {
