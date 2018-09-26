@@ -54,6 +54,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
+    "raf": "^3.4.0",
     "react": "^16.0.0",
     "react-dev-utils": "^3.1.0",
     "react-dom": "^16.0.0",
@@ -76,6 +77,7 @@
       "src/**/*.{js,jsx}"
     ],
     "setupFiles": [
+      "raf/polyfill",
       "<rootDir>/config/polyfills.js",
       "<rootDir>/testSetup"
     ],
