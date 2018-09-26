@@ -1,6 +1,6 @@
 import Synth from './AudioSynth';
 
-const playMusic = (frets) => {
+export const playChord = (frets) => {
   // frets == ['X', 3, 2, 0, 1, 0]
   const notes = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
   // assumes standard tuning
@@ -39,5 +39,3 @@ const playMusic = (frets) => {
     }
   });
 }
-
-export default playMusic;
