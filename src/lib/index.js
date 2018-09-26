@@ -1,3 +1,3 @@
-import GuitarChord from './components/GuitarChord';
+import GuitarChord from './GuitarChord';
 
 export default GuitarChord;
