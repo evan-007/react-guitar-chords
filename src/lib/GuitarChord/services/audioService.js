@@ -1,13 +1,4 @@
-import WebAudioFontPlayer from 'webaudiofont';
-
-import guitarAudio from './guitarAudio';
-
-// setup because WebAudioFontPlayer expects the synth file to be a global :(
-window.guitarAudio = guitarAudio;
-const AudioContextFunc = window.AudioContext || window.webkitAudioContext;
-const audioContext = new AudioContextFunc();
-const player = new WebAudioFontPlayer();
-player.loader.decodeAfterLoading(audioContext, 'guitarAudio');
+import webAudioWrapper from './webAudioWrapper';
 
 export const fretsToMidi = (frets) => {
   // map frets == ['X', 3, 2, 0, 1, 0]
@@ -28,14 +19,7 @@ export const playChord = (midiNotes) => {
   midiNotes.forEach((note, index) => {
     index++;
     setTimeout(() => {
-      player.queueWaveTable(
-        audioContext,
-        audioContext.destination,
-        guitarAudio,
-        0,
-        note,
-        0.5
-      );
+      webAudioWrapper(note);
     }, index * 500);
   });
 }
