@@ -1,3 +1,5 @@
+import WebAudioFontPlayer from 'webaudiofont';
+
 import guitarAudio from './guitarAudio';
 
 // setup because WebAudioFontPlayer expects the synth file to be a global :(
@@ -10,7 +12,7 @@ const setupAudio = () => {
   window.guitarAudio = guitarAudio;
   const AudioContextFunc = window.AudioContext || window.webkitAudioContext;
   audioContext = new AudioContextFunc();
-  const player = new WebAudioFontPlayer();
+  player = new WebAudioFontPlayer();
   player.loader.decodeAfterLoading(audioContext, 'guitarAudio');
 }
 
