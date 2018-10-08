@@ -114,5 +114,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "dependencies": {
+    "webaudiofont": "^2.5.26"
   }
 }

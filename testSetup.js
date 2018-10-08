@@ -4,5 +4,4 @@ import 'raf/polyfill';
 
 configure({ adapter: new Adapter() });
 
-// uses __mocks__/AudioSynth
-jest.mock('AudioSynth');
+jest.mock('webAudioWrapper');
