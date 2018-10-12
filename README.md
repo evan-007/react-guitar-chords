@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/evan-007/react-guitar-chords.svg?branch=master)](https://travis-ci.org/evan-007/react-guitar-chords)
+
 # Guitar chord SVGs in React
 
 ## Getting Started
