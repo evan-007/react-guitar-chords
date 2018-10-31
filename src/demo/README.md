@@ -1,3 +1,7 @@
+## React Guitar Chords demo site
+
+Make changes and run `yarn deploy`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
