@@ -14,6 +14,10 @@ class App extends Component {
           frets={[6, 'x', 7, 7, 5, 5]}
           chordName="Bbmaj7#11"
         />
+        <GuitarChord
+          frets={['x', 0, 2, 4, 2, 0]}
+          chordName="Amaj9"
+        />
       </div>
     );
   }
