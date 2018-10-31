@@ -4,9 +4,7 @@
 
 ## Getting Started
 
-Needs react-16+
-
-[Demo](http://ruddy-zebra.surge.sh/)
+[Demo](http://react-guitar-chords.surge.sh/)
 
 `yarn add react-guitar-chords`
 
