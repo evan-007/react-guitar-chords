@@ -13,6 +13,12 @@ describe('GuitarChord', () => {
     return Enzyme[renderMethod](<GuitarChord {...defaultProps} {...overrideProps} />);
   };
 
+  it('has the correct default props', () => {
+    expect(GuitarChord.defaultProps).toEqual({
+      music: true,
+    });
+  });
+
   it('always renders at least 4 frets', () => {
     const frets = [0, 'x', 'x', 0, 0, 0];
     const wrapper = getWrapper({ frets });
