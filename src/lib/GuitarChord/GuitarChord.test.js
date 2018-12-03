@@ -3,6 +3,7 @@ import * as Enzyme from 'enzyme';
 
 import GuitarChord from './';
 import Fretboard from './components/Fretboard';
+import Strings from './components/Strings';
 
 describe('GuitarChord', () => {
   const getWrapper = (overrideProps, renderMethod = 'shallow') => {
@@ -25,5 +26,15 @@ describe('GuitarChord', () => {
 
     const fretboard = wrapper.find(Fretboard);
     expect(fretboard.props().fretCount).toBe(4);
+  });
+
+  describe('props for Strings', () => {
+    it('passes the correct props', () => {
+      const frets = [3, 2, 0, 0, 0, 3];
+      const wrapper = getWrapper({ frets });
+
+      const strings = wrapper.find(Strings);
+      expect(strings.props().stringCount).toBe(frets.length);
+    });
   });
 });

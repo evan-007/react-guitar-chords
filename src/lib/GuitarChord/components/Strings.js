@@ -2,9 +2,7 @@ import React from 'react';
 import CONSTANTS from '../constants';
 
 const Strings = ({ stringCount, lineStyles }) => {
-  // the veritical lines on the SVG that represent strings
-  // fretboard
-  // stringCount is this.props.frets.length so add 1 to it here, fix this!
+  // draws the vertical lines on the SVG that represent strings
 
   return Array.from(new Array(stringCount)).map((_elem, index) => {
     // -1 because we draw 6 lines, but the first one does not have an offset
