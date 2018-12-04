@@ -7,7 +7,7 @@ import MusicButton from './components/MusicButton';
 
 class GuitarChord extends Component {
   static propTypes = {
-    chordName: PropTypes.string,
+    chordName: PropTypes.string.isRequired,
     frets: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     ),
@@ -15,7 +15,7 @@ class GuitarChord extends Component {
       PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     ),
     // bool for showing music button
-    inline: PropTypes.bool,
+    music: PropTypes.bool,
     // list of classes to apply to the music button
     buttonClasses: PropTypes.string,
   };
