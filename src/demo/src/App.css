@@ -10,3 +10,17 @@
 .docs-container {
   padding-top: 50px;
 }
+
+.example-1-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* TODO make this a real code block and render it on the page */
+/* with syntax highlighting */
+/* also use a real component */
+.example-1-text {
+  align-self: center;
+  font-weight: bold;
+  color: lightblue;
+}

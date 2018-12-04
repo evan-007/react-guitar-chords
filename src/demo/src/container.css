@@ -1,0 +1,6 @@
+.docs-container {
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid red;
+}
