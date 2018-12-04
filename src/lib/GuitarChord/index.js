@@ -18,10 +18,13 @@ class GuitarChord extends Component {
     music: PropTypes.bool,
     // list of classes to apply to the music button
     buttonClasses: PropTypes.string,
+    // style object to pass to the outermost div
+    wrapperStyles: PropTypes.shape({}),
   };
 
   static defaultProps = {
     music: true,
+    wrapperStyles: {},
   };
 
   render() {
@@ -39,8 +42,7 @@ class GuitarChord extends Component {
     const lineStyles = { stroke: "rgb(0,0,0)", strokeWidth: 0.5 };
 
     const stringCount = this.props.frets.length;
-    // TODO make it easier to extend styles of base elem
-    const wrapperStyles = {
+    const guitarChordStyles = {
       display: 'flex',
       flexDirection: 'column',
       maxWidth: 150,
@@ -50,34 +52,36 @@ class GuitarChord extends Component {
       alignSelf: 'center',
       marginBottom: 10,
       ...this.props.buttonStyles,
-    }
+    };
 
     return (
-      <div style={wrapperStyles}>
-        <svg width="150" height="150">
-          <text x="5" y="15">{this.props.chordName}</text>
-          <Strings
-            lineStyles={lineStyles}
-            stringCount={stringCount}
-          />
-          <Fretboard
-            fretStyles={fretStyles}
-            fretCount={fretCount}
-          />
-          <Fingering
-            fingering={this.props.fingering}
-            frets={this.props.frets}
-            lowestFret={lowestFret}
-            fretCount={fretCount}
-          />
-        </svg>
-        { this.props.music &&
-          <MusicButton
-            buttonClasses={this.props.buttonClasses}
-            buttonStyles={buttonStyles}
-            frets={this.props.frets}
-          />
-        }
+      <div style={this.props.wrapperStyles}>
+        <div style={guitarChordStyles}>
+          <svg width="150" height="150">
+            <text x="5" y="15">{this.props.chordName}</text>
+            <Strings
+              lineStyles={lineStyles}
+              stringCount={stringCount}
+            />
+            <Fretboard
+              fretStyles={fretStyles}
+              fretCount={fretCount}
+            />
+            <Fingering
+              fingering={this.props.fingering}
+              frets={this.props.frets}
+              lowestFret={lowestFret}
+              fretCount={fretCount}
+            />
+          </svg>
+          { this.props.music &&
+              <MusicButton
+                buttonClasses={this.props.buttonClasses}
+                buttonStyles={buttonStyles}
+                frets={this.props.frets}
+              />
+          }
+        </div>
       </div>
     );
   }

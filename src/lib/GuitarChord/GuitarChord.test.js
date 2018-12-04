@@ -19,7 +19,16 @@ describe('GuitarChord', () => {
   it('has the correct default props', () => {
     expect(GuitarChord.defaultProps).toEqual({
       music: true,
+      wrapperStyles: {},
     });
+  });
+
+  it('passes styles to the root element', () => {
+    const wrapperStyles = { color: 'red', fontSize: 25 };
+    const wrapper = getWrapper({ wrapperStyles });
+    const container = wrapper.find('div').at(0);
+
+    expect(container.props().style).toEqual(wrapperStyles);
   });
 
   it('always renders at least 4 frets', () => {
