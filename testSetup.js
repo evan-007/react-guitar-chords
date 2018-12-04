@@ -10,7 +10,7 @@ jest.mock('webAudioWrapper');
 const originalLog = console.log
 
 window.console.log = function(msg) {
-  if (msg.includes('WebAudioFont')) {
+  if (typeof(msg) === 'string' && msg.includes('WebAudioFont')) {
     return null;
   }
   return originalLog(msg);
