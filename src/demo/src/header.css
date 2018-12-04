@@ -1,0 +1,19 @@
+.header-container {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  flex-grow: 2;
+  padding-left: 20px;
+}
+
+.header-link {
+  color: inherit;
+  padding-right: 20px;
+}
