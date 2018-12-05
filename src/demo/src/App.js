@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import GuitarChord from 'react-guitar-chords';
+import ReactHighlight from 'react-highlight'
+import 'highlightjs/styles/github-gist.css';
 import './App.css';
 import Header from './Header';
 import Container from './Container';
+import Example from './Example';
+import ExampleRaw from '!raw-loader!./Example'; // eslint-disable-line import/no-webpack-loader-syntax
+import InlineExample from './InlineExample';
+import InlineExampleRaw from '!raw-loader!./InlineExample'; // eslint-disable-line import/no-webpack-loader-syntax
 
 class App extends Component {
   render() {
@@ -10,36 +15,22 @@ class App extends Component {
       <React.Fragment>
         <Header />
         <div className="chord-background">
-          <Container style={{ textAlign: 'center' }}>
-            <h2>Easy chord charts with audio for React</h2>
-            <div>
-              <div className='example-1-container'>
-                <p
-                  className="example-1-text"
-                  children={
-                    `<GuitarChord
-                    frets={['x', 3, 2, 0, 1, 0]}
-                    chordName="C Major"
-                    />`
-                  }
-                />
-                <GuitarChord
-                  frets={['x', 3, 2, 0, 1, 0]}
-                  chordName="C Major"
-                />
-              </div>
-              <GuitarChord
-                frets={[6, 'x', 7, 7, 5, 5]}
-                chordName="Bbmaj7#11"
-              />
-              <GuitarChord
-                frets={['x', 0, 2, 4, 2, 0]}
-                chordName="Amaj9"
-              />
+          <Container>
+            <h2 style={{textAlign: 'center'}}>Easy chord charts with audio for React</h2>
+            <div className="example-container">
+              <ReactHighlight className="js">
+                {ExampleRaw}
+              </ReactHighlight>
+              <Example />
+            </div>
+            <div className="example-container">
+              <ReactHighlight className="js">
+                {InlineExampleRaw}
+              </ReactHighlight>
+              <InlineExample />
             </div>
           </Container>
         </div>
-        <Container style={{ height: '10000px' }} />
       </React.Fragment>
     );
   }

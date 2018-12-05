@@ -1,5 +1,5 @@
 .chord-background {
-  background-image: url('./bg_chords.jpg');
+  /* background-image: url('./bg_chords.jpg'); */
   height: 100%;
   background-attachment: fixed;
   background-position: center;
@@ -11,16 +11,7 @@
   padding-top: 50px;
 }
 
-.example-1-container {
+.example-container {
   display: flex;
-  justify-content: center;
-}
-
-/* TODO make this a real code block and render it on the page */
-/* with syntax highlighting */
-/* also use a real component */
-.example-1-text {
-  align-self: center;
-  font-weight: bold;
-  color: lightblue;
+  justify-content: space-between;
 }

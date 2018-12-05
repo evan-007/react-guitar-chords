@@ -116,6 +116,7 @@
     "extends": "react-app"
   },
   "dependencies": {
+    "react-highlight": "^0.12.0",
     "webaudiofont": "^2.5.26"
   }
 }
