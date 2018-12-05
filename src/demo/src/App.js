@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactHighlight from 'react-highlight'
-import 'highlightjs/styles/github-gist.css';
+import 'highlight.js/styles/github-gist.css';
 import './App.css';
 import Header from './Header';
 import Container from './Container';
