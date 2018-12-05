@@ -4,3 +4,9 @@
   background-color: white;
   border: 1px solid red;
 }
+
+@media (max-width: 685px) {
+  .docs-container {
+    max-width: 100%;
+  }
+}
