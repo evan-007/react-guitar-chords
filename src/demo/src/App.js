@@ -16,24 +16,27 @@ class App extends Component {
         <Header />
         <div className="chord-background">
           <Container>
-            <h2 style={{textAlign: 'center'}}>Easy chord charts with audio for React</h2>
-            <div className="example-container">
-              <ReactHighlight className="js">
-                {ExampleRaw}
-              </ReactHighlight>
-              <Example />
+            <h2 style={{textAlign: 'center'}}>React guitar chord charts with optional audio</h2>
+            <ReactHighlight className="markdown">
+              yarn add react-guitar-chords
+            </ReactHighlight>
+                <div className="example-container">
+                  <ReactHighlight className="js">
+                    {ExampleRaw}
+                  </ReactHighlight>
+                  <Example />
+                </div>
+                <div className="example-container">
+                  <ReactHighlight className="js">
+                    {InlineExampleRaw}
+                  </ReactHighlight>
+                  <InlineExample />
+                </div>
+              </Container>
             </div>
-            <div className="example-container">
-              <ReactHighlight className="js">
-                {InlineExampleRaw}
-              </ReactHighlight>
-              <InlineExample />
-            </div>
-          </Container>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+          </React.Fragment>
+          );
+          }
+          }
 
-export default App;
+          export default App;

@@ -12,6 +12,7 @@
 }
 
 .example-container {
-  display: flex;
-  justify-content: space-between;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 450px);
 }
