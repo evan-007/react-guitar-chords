@@ -20,23 +20,24 @@ class App extends Component {
             <ReactHighlight className="markdown">
               yarn add react-guitar-chords
             </ReactHighlight>
-                <div className="example-container">
-                  <ReactHighlight className="js">
-                    {ExampleRaw}
-                  </ReactHighlight>
-                  <Example />
-                </div>
-                <div className="example-container">
-                  <ReactHighlight className="js">
-                    {InlineExampleRaw}
-                  </ReactHighlight>
-                  <InlineExample />
-                </div>
-              </Container>
+            <hr />
+            <div className="example-container">
+              <ReactHighlight className="js">
+                {ExampleRaw}
+              </ReactHighlight>
+              <Example />
             </div>
-          </React.Fragment>
-          );
-          }
-          }
+            <div className="example-container">
+              <ReactHighlight className="js">
+                {InlineExampleRaw}
+              </ReactHighlight>
+              <InlineExample />
+            </div>
+          </Container>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
 
-          export default App;
+export default App;

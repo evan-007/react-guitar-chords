@@ -13,6 +13,13 @@
 
 .example-container {
   overflow: scroll;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 450px);
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 685px) {
+  .example-container {
+    overflow: scroll;
+    display: block;
+  }
 }
