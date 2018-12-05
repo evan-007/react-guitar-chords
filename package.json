@@ -82,8 +82,8 @@
       "<rootDir>/testSetup"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+      "<rootDir>/src/lib/**/__tests__/**/*.js?(x)",
+      "<rootDir>/src/lib/**/?(*.)(spec|test).js?(x)"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
